@@ -1,0 +1,48 @@
+mat-toolbar{
+  justify-content: space-between;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button{
+    box-shadow: 0px 0px 10px 0px #000000;
+    border-radius: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: #ff9900;
+    }
+  }
+}
+
+.all-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+}
+
+.login-button {
+  display: flex;
+}
+ .title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+ }
+
+ mat-toolbar > div > div.login-button > button {
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0px 0px 10px 0px #000000;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: #ff9900;
+  }
+}

@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span class="title">Dubai Landmarks</span>
+  <div class="all-buttons">
+    <div class="nav-buttons">
+      <button mat-button routerLink="/landmarks">Landmarks</button>
+      <button mat-button routerLink="/about">About</button>
+      <button mat-button routerLink="/">Home</button>
+    </div>
+    <div class="login-button">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Login Action</button>
+  </mat-menu>
+</mat-toolbar>
