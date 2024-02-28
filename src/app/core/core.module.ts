@@ -1,6 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import * as Parse from 'parse';
-import { parseConfig } from '../../environments/environment'; // Adjust the path as necessary
+import { parseConfig } from '../../environments/environment';
 
 @NgModule({
   // declarations, imports, providers, etc.
@@ -12,7 +12,7 @@ export class CoreModule {
     }
 
     // Initialize Parse
-    Parse.initialize(parseConfig.appId, undefined, parseConfig.masterKey);
-    (Parse as any).serverURL = parseConfig.serverUrl;
+    Object.assign(Parse, { serverURL: parseConfig.serverUrl });
+    Parse.initialize(parseConfig.appId);
   }
 }
