@@ -1,0 +1,17 @@
+<div class="card landmark-card">
+  <div class="landmark-thumb-container">
+    <div class="thumb-frame">
+      <img [src]="landmark?.photo_thumb" class="card-img-top" alt="Landmark" (click)="toggleLightbox()">
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+      <a (click)="$event.stopPropagation(); navigate()">{{ landmark?.title }}</a>
+    </h5>
+    <p class="card-text">{{ landmark?.short_info }}</p>
+  </div>
+  <div *ngIf="showLightbox" class="lightbox" (click)="toggleLightbox()">
+    <img [src]="landmark?.photo" class="lightbox-img" alt="Landmark">
+    <button type="button" class="btn-close" aria-label="Close" (click)="toggleLightbox()"></button>
+  </div>
+</div>
