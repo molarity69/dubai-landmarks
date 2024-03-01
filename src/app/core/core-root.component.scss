@@ -1,5 +1,8 @@
 /* Targeting the navbar component directly if needed */
 navbar {
-  display: block; /* Ensure the navbar is block-level to fill width */
-  width: 100%; /* Ensure it does not exceed the viewport width */
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1020;
 }
