@@ -1,0 +1,61 @@
+<div class="card landmark-card">
+  <div class="landmark-photo-container text-center">
+    <div class="landmark-photo-frame">
+      <img [src]="landmark?.photo" class="card-image" alt="Landmark">
+    </div>
+  </div>
+  <div class="landmark-link-container card-footer text-center">
+    <a [href]="landmark?.url" target="_blank" class="landmark-link">
+      <i class="bi bi-globe"></i>
+      {{ landmark?.url }}
+      <i class="bi bi-link-45deg"></i>
+    </a>
+  </div>
+  <form [formGroup]="form" *ngIf="landmark" class="card-body">
+    <div class="title-container" *ngIf="isLoggedIn; else titleText">
+      <input formControlName="title" class="form-control" />
+    </div>
+    <ng-template #titleText>
+      <h5 class="card-title">{{ form.get('title')?.value }}</h5>
+    </ng-template>
+
+    <div class="short-info-container" *ngIf="isLoggedIn; else shortInfoText">
+      <textarea formControlName="short_info" class="form-control"></textarea>
+    </div>
+    <ng-template #shortInfoText>
+      <p class="card-text">{{ form.get('short_info')?.value }}</p>
+    </ng-template>
+
+    <div class="description-container" *ngIf="isLoggedIn; else descriptionText">
+      <textarea formControlName="description" class="form-control"></textarea>
+    </div>
+    <ng-template #descriptionText>
+      <p class="card-text">{{ form.get('description')?.value }}</p>
+    </ng-template>
+  </form>
+
+  <!-- Save and Cancel Buttons -->
+  <div *ngIf="isLoggedIn" class="buttons-center mt-3">
+    <button id="saveButton" class="btn btn-primary" (click)="saveChanges()" [disabled]="!form.dirty || !form.valid || form.pristine">Save</button>
+    <button id="cancelButton" class="btn btn-secondary" (click)="confirmCancel()" [disabled]="!form.dirty">Cancel</button>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div #cancelConfirmationModal class="modal fade" id="cancelConfirmationModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Confirm Cancellation</h5>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to cancel your changes?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">No</button>
+        <button type="button" class="btn btn-primary" (click)="actuallyCancel()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
