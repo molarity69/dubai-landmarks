@@ -1,0 +1,14 @@
+// _mixins.scss
+@mixin button-hover {
+  background-color: $hover-color;
+  color: #000000;
+  box-shadow: 0px 0px 10px 0px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+@mixin button-click {
+  background-color: $hover-color;
+  color: #000000;
+  box-shadow: 0px 0px 0px 0px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}

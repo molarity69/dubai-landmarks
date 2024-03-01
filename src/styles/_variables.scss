@@ -1,0 +1,12 @@
+// _variables.scss
+$primary: #3f1981; // Purple primary color
+$accent: #bb138e; // Fuchsia accent color
+$hover-color: #ff9900; // Orange color for hover states
+$text-color: #fff; // White text color
+$shadow-color: #000000; // Shadow color
+
+// Bootstrap theme-colors map override
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $accent,
+);
