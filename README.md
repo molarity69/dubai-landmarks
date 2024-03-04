@@ -1,27 +1,77 @@
-# DubaiLandmarks
+# Dubai Landmarks 🕌🏙️
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+Welcome to the Dubai Landmarks project! This Angular-based web application showcases the beautiful and iconic landmarks of Dubai.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Before you begin, ensure you have met the following requirements:
 
-## Code scaffolding
+- **Node.js**: Version 20.11.1 or later
+- **npm**: Version 10.4.0 or later
+- **Angular CLI**: Version 17.2.1 or later
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+To get a local copy up and running follow these simple steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone the repository**
+git clone `https://github.com/molarity69/dubai-landmarks.git`
+2. **Navigate to the project directory**
+cd dubai-landmarks
+3. **Install NPM packages**
+npm install
+4. **Environment Setup**
+Place your `environment.ts` file under the `src/environments` folder.
+5. **Start the Development Server**
 
-## Running unit tests
+npm start
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Access the application at [http://localhost:4200](http://localhost:4200).
 
-## Running end-to-end tests
+## Project Structure
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The project follows a structured directory layout for efficient management and scalability:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+dubai-landmarks/
+├── src/
+│ ├── app/
+│ │ ├── components/ # UI Components
+│ │ │ ├── shared/ # Shared components across features
+│ │ │ │ ├── landmark-card/
+│ │ │ │ └── ...
+│ │ │ ├── global/ # Components always on screen
+│ │ │ │ ├── navbar/
+│ │ │ │ ├── toast/
+│ │ │ │ └── ...
+│ │ │ └── features/ # Feature-specific components
+│ │ │ ├── home/
+│ │ │ └── ...
+│ │ ├── models/ # Data models and interfaces
+│ │ │ ├── landmark.model.ts
+│ │ │ └── ...
+│ │ ├── services/ # Services for business logic
+| | | ├── shared/ # Shared services across features
+| │ │ │ ├── auth.service.ts
+| │ │ │ ├── landmark.service.ts
+| │ │ │ └── ...
+│ │ ├── pipes/ # Custom pipes for data transformation
+│ │ │ └── ...
+│ │ ├── directives/ # Directives for extending HTML behavior
+│ │ │ └── ...
+│ │ ├── interceptors/ # HTTP interceptors
+│ │ │ └── ...
+│ │ └── core/ # Core module for singleton services and core functionality
+│ │ ├── core.module.ts
+| | ├── core-root.component.ts
+│ │ └── ...
+│ ├── assets/ # Static assets like images and global styles
+│ └── environments/ # Environment-specific configuration files
+| │ └── environment.ts
+│ └── styles/ # Global styles
+│ | └── _mixins.scss
+│ | └── _variables.scss
+| └── types/ # Custom type definitions
+| └── ...
+├── angular.json # Angular CLI configuration
+├── package.json # NPM package configuration
+└── ...
