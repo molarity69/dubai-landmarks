@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div class="container my-3">
+  <div class="row justify-content-center" style="border-radius: 10px;">
+    <div class="col-md-4 shadow-lg p-3 mb-5 rounded" style="width: inherit; box-shadow: 10px 0 5px -2px #888, -10px 0 5px -2px #888; ">
+      <!-- Dynamically populated Landmark Cards will go here -->
+      <app-landmark-card class="landmark-card" *ngFor="let landmark of filteredLandmarks" [landmark]="landmark"></app-landmark-card>
+    </div>
+  </div>
+</div>
