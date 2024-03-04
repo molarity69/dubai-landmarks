@@ -24,12 +24,11 @@
   }
 
   img.card-img-top {
-    height: 100%;
-    width: auto;
-    object-fit: cover;
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
     cursor: pointer;
     margin: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
 
   .card-body {
